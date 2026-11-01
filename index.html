@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ru" class="mode-open">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Замесы на перекрёстке — теория к мастер-классу</title>
+  <meta name="description" content="Мастер-класс «Замесы на перекрёстке»: равнозначный перекрёсток, несколько машин одновременно, разворот. Что смотреть, кому уступать и как читать намерения других водителей." />
+  <link rel="icon" type="image/png" sizes="192x192" href="pictures/favicon.png" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top">
+        <img class="brand__logo" src="pictures/LogoProspect.png" alt="Логотип автошколы «Проспект»" />
+        <span class="brand__text">
+          <span class="brand__title">Замесы на перекрёстке</span>
+          <span class="brand__sub">Мастер-класс · теория</span>
+        </span>
+      </a>
+      <div class="topbar__progress">
+        <div class="progress progress--top">
+          <div class="progress__bar"><div class="progress__fill" id="progress-fill"></div></div>
+          <span class="progress__text" id="progress-text">0%</span>
+        </div>
+        <a class="btn btn--ghost btn--small" href="#test">К проверке</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout" id="top">
+    <aside class="sidebar" aria-label="Содержание">
+      <p class="sidebar__title">Содержание</p>
+      <nav class="sidebar__nav" id="nav"></nav>
+      <div class="sidebar__meta" id="sidebar-meta"></div>
+    </aside>
+
+    <main class="content">
+
+      <!-- HERO -->
+      <section class="hero card">
+        <img class="hero__img" src="pictures/hero.jpg" alt="Городская улица с машинами под дождём — живопись" />
+        <div class="hero__body">
+          <p class="eyebrow">Мастер-класс</p>
+          <h1>Замесы на перекрёстке</h1>
+          <p class="hero__lead">
+            Вы подъезжаете к равнозначному перекрёстку. Одновременно с вами появляются ещё три машины:
+            одна поворачивает, другая едет прямо, третья уже начала движение. За несколько секунд нужно
+            понять, кто поедет первым — и что делать вам. Этот материал о том, как в такой момент
+            не потерять правила и увидеть перекрёсток целиком.
+          </p>
+          <ul class="hero__meta">
+            <li>≈ 10 минут</li>
+            <li>6 разделов</li>
+            <li>проверка</li>
+            <li>чек-лист</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#s1">Начать</a>
+            <a class="btn btn--ghost" href="#test">Сразу к проверке</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1 -->
+      <section class="card section" id="s1" data-title="Почему теряются правила">
+        <p class="eyebrow">Раздел 1</p>
+        <h2>Почему в замесе теряются правила</h2>
+        <p class="lead">
+          В билете всё нарисовано: главная дорога, второстепенная, кто первый. В жизни картинка
+          меняется каждую секунду.
+        </p>
+        <p>
+          Вы подъезжаете — и одновременно с вами на перекрёстке оказываются ещё три машины. Одна
+          поворачивает, другая едет прямо, третья уже выехала. Все смотрят друг на друга: кто-то
+          медлит, кто-то торопится.
+        </p>
+        <p>
+          В этот момент внимание сужается до одной машины. Человек перестаёт видеть весь перекрёсток,
+          не понимает намерений остальных — и действует наугад. Иногда это заканчивается проездом
+          не туда, иногда — страхом перед сложными перекрёстками, а иногда — обидным ДТП.
+        </p>
+        <div class="callout callout--key">
+          <span class="callout__icon">→</span>
+          <p>
+            Задача — вернуть картинку целиком: увидеть всех участников, сравнить их права
+            и выбраться из любой запутанной ситуации на перекрёстке.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="card section" id="s2" data-title="Назовите перекрёсток">
+        <p class="eyebrow">Раздел 2</p>
+        <h2>Назовите перекрёсток</h2>
+        <p class="lead">
+          Название перекрёстка — это уже половина решения! Назвать перекрёсток — значит определить,
+          регулируемый он, равнозначный или неравнозначный.
+        </p>
+
+        <div class="tree" id="tree">
+          <div class="tree__level">
+            <p class="tree__q">1. Регулируемый или нерегулируемый?</p>
+            <div class="tree__opts">
+              <button class="tree__btn" type="button" data-next="reg">Регулируемый</button>
+              <button class="tree__btn" type="button" data-next="unreg">Нерегулируемый</button>
+            </div>
+            <p class="tree__result" data-result="reg" hidden>
+              Светофор или регулировщик. Очерёдность задаёт сигнал — знаки приоритета не работают.
+            </p>
+          </div>
+
+          <div class="tree__level" data-level="unreg" hidden>
+            <p class="tree__q">2. Равнозначный или неравнозначный?</p>
+            <div class="tree__opts">
+              <button class="tree__btn" type="button" data-next="equal">Равнозначный</button>
+              <button class="tree__btn" type="button" data-next="unequal">Неравнозначный</button>
+            </div>
+            <p class="tree__result" data-result="equal" hidden>
+              Правило правой руки: уступает тот, у кого угроза удара в правый борт.
+            </p>
+          </div>
+
+          <div class="tree__level" data-level="unequal" hidden>
+            <p class="tree__q">3. Я на главной или на второстепенной?</p>
+            <div class="tree__opts">
+              <button class="tree__btn" type="button" data-next="main">На главной</button>
+              <button class="tree__btn" type="button" data-next="secondary">На второстепенной</button>
+            </div>
+            <p class="tree__result" data-result="main" hidden>
+              Проезжаю перекрёсток первым по отношению к поперечной дороге — в любом направлении.
+            </p>
+            <p class="tree__result" data-result="secondary" hidden>
+              Уступаю тем, кто едет по главной дороге.
+            </p>
+          </div>
+        </div>
+
+        <p class="muted">
+          Не получается определить? Считаем себя на второстепенной дороге.
+        </p>
+
+        <div class="flip" data-flip tabindex="0" role="button" aria-expanded="false"
+             aria-label="Карточка: что, если главная дорога меняет направление">
+          <div class="flip__card">
+            <div class="flip__face flip__face--front">
+              <div class="flip__grid">
+                <div>
+                  <p class="flip__tag">Переверните карточку</p>
+                  <p class="flip__title">А что, если главная дорога меняет направление?</p>
+                </div>
+                <img class="flip__sign" src="pictures/sign-8.13.svg" alt="Знак «Направление главной дороги»" />
+              </div>
+              <p class="flip__hint">Нажмите, чтобы посмотреть ответ →</p>
+            </div>
+
+            <div class="flip__face flip__face--back">
+              <p class="flip__lead">Определите, где вы находитесь: на главной дороге или на второстепенной.</p>
+
+              <div class="flip__case">
+                <span class="signmark"><img src="pictures/sign-8.13.svg" alt="Знак «Направление главной дороги»: вы на главной" /><i class="signmark__you">вы</i></span>
+                <div>
+                  <p><b>Если на главной</b>, найдите, кто ещё на главной. С ними разъезжаемся по правилу правой руки.</p>
+                  <p class="flip__rule">Они справа? <b>Ждём!</b><br>Они не справа? <b>Едем!</b></p>
+                </div>
+              </div>
+
+              <div class="flip__case">
+                <span class="signmark"><img class="is-turned" src="pictures/sign-8.13.svg" alt="Знак «Направление главной дороги»: вы на второстепенной" /><i class="signmark__you">вы</i></span>
+                <div>
+                  <p><b>Если вы на второстепенной</b>, сначала пропускаем всех, кто едет с главной. Далее
+                    разъезжаемся по помехе справа с теми, кто в равных с нами правах.</p>
+                </div>
+              </div>
+
+              <p class="flip__hint">Нажмите, чтобы вернуться ↺</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="card section" id="s3" data-title="Порядок действий">
+        <p class="eyebrow">Раздел 3</p>
+        <h2>Порядок действий на равнозначном перекрёстке</h2>
+        <p class="lead">
+          Три шага. Их можно успеть за те несколько секунд, пока вы подъезжаете к перекрёстку.
+        </p>
+
+        <div class="steps" id="steps">
+          <button class="step is-active" data-step="0" type="button">
+            <span class="step__n">1</span>
+            <span class="step__t">Весь перекрёсток</span>
+          </button>
+          <button class="step" data-step="1" type="button">
+            <span class="step__n">2</span>
+            <span class="step__t">Права</span>
+            <span class="step__d">правило правой руки</span>
+          </button>
+          <button class="step" data-step="2" type="button">
+            <span class="step__n">3</span>
+            <span class="step__t">Намерение</span>
+            <span class="step__d">показать и поехать</span>
+          </button>
+        </div>
+        <div class="steps__detail" id="step-detail"></div>
+
+        <div class="callout callout--note">
+          <span class="callout__icon">i</span>
+          <p>
+            Отдельно успеваем посмотреть, как устроена дорога, на которую мы выезжаем: об этом скажут
+            разметка и знаки, установленные в начале дороги сразу за перекрёстком.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="card section" id="s4" data-title="Правило правой руки">
+        <p class="eyebrow">Раздел 4</p>
+        <h2>Правило правой руки</h2>
+        <p class="lead">
+          При <b>одинаковых правах</b> для движения и <b>пересечении траекторий</b> между
+          <b>безрельсовыми ТС</b> уступает дорогу тот, у кого угроза удара в правый борт.
+        </p>
+        <p>
+          Уступаем встречным при повороте налево или развороте — это то же правило. Мы пересекаем
+          траекторию встречного, и удар придётся нам в правый борт.
+        </p>
+
+        <div class="schemes" aria-label="Схемы очерёдности проезда">
+          <figure class="scheme">
+            <div class="scheme__road">
+              <img class="vehicle vehicle--you" src="pictures/car-1.png" alt="Синий автомобиль — вы, движение прямо" />
+              <span class="you-label">Вы</span>
+              <img class="vehicle vehicle--right" src="pictures/car-2.png" alt="Автомобиль справа, движение прямо" />
+            </div>
+            <figcaption><b>Оба едут прямо.</b> Автомобиль справа — вы уступаете.</figcaption>
+          </figure>
+          <figure class="scheme">
+            <div class="scheme__road">
+              <img class="vehicle vehicle--you" src="pictures/car-1.png" alt="Синий автомобиль на прямых колёсах — вы, поворот налево" />
+              <span class="you-label">Вы</span>
+              <span class="turn-signal" aria-label="Включён левый указатель поворота">✦</span>
+              <img class="vehicle vehicle--opposite" src="pictures/car-3.png" alt="Встречный автомобиль движется прямо" />
+            </div>
+            <figcaption><b>Вы поворачиваете налево, встречный едет прямо.</b> Вы уступаете.</figcaption>
+          </figure>
+          <figure class="scheme">
+            <div class="scheme__road scheme__road--tram">
+              <span class="tram-tracks" aria-hidden="true"></span>
+              <img class="vehicle vehicle--you" src="pictures/car-1.png" alt="Синий автомобиль — вы, движение прямо" />
+              <span class="you-label">Вы</span>
+              <img class="tram" src="pictures/tram.png" alt="Трамвай слева на трамвайных путях" />
+            </div>
+            <figcaption><b>Трамвай на равнозначном перекрёстке.</b> Вы уступаете независимо от направления его движения.</figcaption>
+          </figure>
+          <figure class="scheme">
+            <div class="scheme__road">
+              <img class="vehicle vehicle--you" src="pictures/car-1.png" alt="Синий автомобиль — вы, движение прямо" />
+              <span class="you-label">Вы</span>
+              <img class="vehicle vehicle--right" src="pictures/car-2.png" alt="Автомобиль справа, движение прямо" />
+              <img class="vehicle vehicle--opposite" src="pictures/car-3.png" alt="Встречный автомобиль, движение прямо" />
+              <img class="vehicle vehicle--left" src="pictures/car-4.png" alt="Автомобиль слева, движение прямо" />
+            </div>
+            <figcaption><b>Четыре автомобиля, всем прямо.</b> У каждого помеха справа — очерёдность определяется по взаимной договорённости.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="sub">Сложные траектории: поворот налево</h3>
+        <p>
+          На видео разбирается, как проезжать равнозначный перекрёсток при повороте налево:
+          где пересекаются траектории, кому нужно уступить и как меняется ситуация, когда
+          на перекрёстке оказывается несколько автомобилей.
+        </p>
+        <figure class="clip">
+          <video src="pictures/left-turn-equal.mp4" poster="pictures/left-turn-poster.jpg"
+            width="960" height="540" controls playsinline preload="metadata"></video>
+          <figcaption>Видео 5:56. Проследите направление каждого автомобиля и точки пересечения траекторий.</figcaption>
+        </figure>
+
+        <details class="check">
+          <summary>Проверьте себя</summary>
+          <div class="check__body">
+            <p class="check__q">
+              Вы собираетесь сделать поворот налево. Справа никого, но на встречке едут машины.
+              Можно ли выехать на перекрёсток?
+            </p>
+            <button class="check__reveal" type="button">Показать ответ</button>
+            <p class="check__a" hidden>
+              <b>Да.</b> Выезжайте на центр перекрёстка и на ровных колёсах ждите, когда уедет встречка.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- 5 -->
+      <section class="card section" id="s5" data-title="Разворот в замесе">
+        <p class="eyebrow">Раздел 5</p>
+        <h2>Разворот в замесе</h2>
+        <p class="lead">
+          На мастер-классе все машины поедут на разворот. Разворот сложнее поворота: траектория
+          пересекает встречный поток и всех, кто едет с поперечной дороги.
+        </p>
+
+        <div class="callout callout--warn">
+          <span class="callout__icon">!</span>
+          <p>Не выезжайте на перекрёсток, если на нём образовался затор!</p>
+        </div>
+
+        <ol>
+          <li><b>Сначала — уступаем тем, кто едет справа с поперечной дороги.</b> После этого выезжаем
+            на перекрёсток.</li>
+          <li><b>Уступаем встречным на перекрёстке, а не перед ним.</b> Выезжаем и ждём окно во встречном
+            потоке. Стоять перед перекрёстком и ждать, пока всё опустеет, бессмысленно.</li>
+          <li><b>Встречка свободна — не спешим уезжать с перекрёстка!</b> Разворачиваясь, посмотрите,
+            нет ли кого-то справа на поперечной дороге.</li>
+          <li><b>Не режем угол.</b> Корпус ставим так, чтобы выезд с перекрёстка был прямым: тогда
+            видно пешеходов и свой ряд.</li>
+        </ol>
+
+        <div class="callout callout--ok">
+          <span class="callout__icon">✓</span>
+          <p>
+            Если встречный тоже разворачивается, нужно решить, как вы разъезжаетесь: правыми бортами
+            или объезжаете друг друга сзади. Оба автомобиля двигаются согласованно.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="card section" id="s6" data-title="Читать намерения">
+        <p class="eyebrow">Раздел 6</p>
+        <h2>Читать намерения</h2>
+        <p class="lead">
+          Правила дают опору, но этого недостаточно. Нужно уметь ориентироваться, читая намерения
+          других участников движения.
+        </p>
+
+        <div class="grid-cards">
+          <div class="mini">
+            <p><b>Поворотник</b><br>
+            Смотрим на поворотники других автомобилей: куда они будут двигаться? Не забываем, что авто
+            с левым поворотником может как повернуть налево, так и пойти на разворот.</p>
+            <p>Чтобы быть предсказуемым и безопасным водителем, заблаговременно включаем поворотник.
+            Но так, чтобы не ввести других в заблуждение. Поворотник включён уже на перекрёстке —
+            читается как намерение перестроиться, но не развернуться или повернуть налево.</p>
+          </div>
+          <div class="mini">
+            <p><b>Корпус и колёса</b><br>
+            По положению машины видно, начался ли манёвр, по какой траектории она поедет.</p>
+          </div>
+          <div class="mini mini--wide">
+            <p><b>Жесты</b><br>
+            Можно показать рукой «проезжайте» — и договориться без слов. Так можно ускорить проезд
+            перекрёстка для всех участников. Жест не отменяет обязанность уступить и не гарантирует безопасность манёвра.</p>
+            <img class="mini__img" src="pictures/zhesty.jpg" alt="Равнозначный перекрёсток: автомобиль и гужевая повозка" loading="lazy" />
+          </div>
+          <div class="mini">
+            <p><b>Взгляд</b><br>
+            По взгляду других водителей можно понять, видят ли нас, предсказать их намерения
+            и дальнейшие действия.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--note">
+          <span class="callout__icon">i</span>
+          <p>
+            <b>Пример.</b> В ПДД нет прямого регламента на случай, когда 4 автомобиля подъехали
+            с четырёх сторон одновременно и каждому нужно ехать прямо. Стандартное правило «помехи
+            справа» здесь формально зацикливается — у каждого есть помеха справа. Очередность в такой
+            ситуации водители определяют между собой по взаимной договорённости: жестами, визуальным
+            контактом. Кто-то один должен отказаться от движения и явно показать это остальным.
+          </p>
+        </div>
+
+        <figure class="photo photo--map">
+          <img src="pictures/example-four.jpg" alt="Четыре автомобиля одновременно подъехали к равнозначному перекрёстку с четырёх сторон" loading="lazy" />
+          <figcaption>Все четверо подъехали одновременно и едут прямо — у каждого помеха справа.</figcaption>
+        </figure>
+      </section>
+
+      <!-- TEST -->
+      <section class="card section section--test" id="test" data-title="Проверка">
+        <p class="eyebrow">Проверка</p>
+        <h2>Три вопроса</h2>
+        <p class="lead">Короткая проверка по правилам, на которые опирается проезд равнозначного перекрёстка.</p>
+
+        <div class="test" id="test-app">
+          <div class="test__start" id="test-start">
+            <button class="btn btn--primary btn--big" id="test-begin">Начать проверку</button>
+            <p class="muted" id="test-last"></p>
+          </div>
+
+          <div class="test__run" id="test-run" hidden>
+            <div class="test__bar">
+              <div class="progress"><div class="progress__bar"><div class="progress__fill" id="test-fill"></div></div></div>
+              <span class="test__counter" id="test-counter">1 / 3</span>
+            </div>
+            <p class="test__q" id="test-q"></p>
+            <div class="test__options" id="test-options"></div>
+            <p class="test__feedback" id="test-feedback" hidden></p>
+            <div class="test__nav">
+              <button class="btn btn--ghost" id="test-prev" disabled>← Назад</button>
+              <button class="btn btn--primary" id="test-next" disabled>Далее →</button>
+            </div>
+          </div>
+
+          <div class="test__result" id="test-result" hidden>
+            <div class="result__score" id="result-score">—</div>
+            <p class="result__verdict" id="result-verdict"></p>
+            <ul class="result__list" id="result-list"></ul>
+            <div class="test__nav">
+              <button class="btn btn--ghost" id="test-retry">Пройти заново</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="card section" id="s7" data-title="Чек-лист">
+        <p class="eyebrow">Перед выездом</p>
+        <h2>Чек-лист</h2>
+        <p class="lead">Девять проверок перед перекрёстком — и три варианта замеса, к которым стоит быть готовым.</p>
+
+        <h3 class="sub">Для равнозначного перекрёстка</h3>
+        <div class="checklist" id="checklist">
+          <label class="checklist__item"><input type="checkbox" data-key="approach-1" /> <span>Снизьте скорость. Равнозначный перекрёсток требует повышенного внимания, следуем правилу правой руки.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-2" /> <span>Включите указатель поворота (если планируете поворачивать или разворачиваться), чтобы другие водители понимали ваши намерения.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-3" /> <span>Оцените перекрёсток: точно ли равнозначный, нет ли затора, кто едет с других направлений, куда едут.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-4" /> <span>Проверьте «помеху справа». Вы обязаны уступить дорогу любому транспортному средству, приближающемуся к перекрёстку справа от вас.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-5" /> <span>Проверьте наличие трамвая. На равнозначном перекрёстке он будет иметь преимущество.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-6" /> <span>При повороте налево/развороте проверьте встречных, вы должны будете уступить им дорогу, выехав на перекрёсток.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-7" /> <span>Пропустите пешеходов. При повороте направо или налево уступите дорогу пешеходам, переходящим проезжую часть, на которую вы поворачиваете.</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-8" /> <span>Убедитесь, что вас пропускают те, кто у вас НЕ справа!</span></label>
+          <label class="checklist__item"><input type="checkbox" data-key="approach-9" /> <span>Не выезжайте, если за перекрёстком или на нём затор.</span></label>
+        </div>
+
+        <h3 class="sub">Варианты замеса</h3>
+        <ol class="jams">
+          <li>
+            <b>Тупиковая ситуация.</b> Четыре машины с четырёх сторон: водители разъезжаются
+            по взаимной договорённости.
+          </li>
+          <li>
+            <b>Одновременный разворот.</b> Важно коммуницировать с водителями других ТС и разъезжаться
+            аккуратно. Будьте готовы пропустить машины, которые изначально были слева, но оказались
+            справа от вас во время разворота.
+          </li>
+          <li>
+            <b>Многополосные дороги и интенсивное движение.</b> Придётся долго ждать своей очереди,
+            высматривать окно для манёвра, действовать уверенно и осторожно.
+            <figure class="clip">
+              <video src="pictures/traffic.mp4" poster="pictures/traffic-poster.jpg"
+                width="1024" height="480" controls muted loop playsinline preload="none"></video>
+              <figcaption>Видео демонстрирует только плотность потока и поиск окна для манёвра; это не разбор проезда по российским ПДД.</figcaption>
+            </figure>
+          </li>
+        </ol>
+
+        <h3 class="sub">Что будет на мастер-классе</h3>
+        <ul>
+          <li>Восемь проездов через один и тот же перекрёсток.</li>
+          <li>Четыре разные позиции — с разных сторон перекрёстка.</li>
+          <li>Каждый манёвр — разворот.</li>
+          <li>После каждого проезда — разбор: куда было направлено внимание, какие сигналы
+            других водителей заметили, а какие пропустили.</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <img class="footer__logo" src="pictures/LogoProspect.png" alt="Логотип автошколы «Проспект»" />
+        <p>
+          Теория к мастер-классу <b>«Замесы на перекрёстке»</b>. Прогресс сохраняется в вашем браузере
+          и никуда не отправляется.
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>
