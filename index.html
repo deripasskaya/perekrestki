@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="mode-open">
+<html lang="ru" class="mode-closed">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -429,6 +429,30 @@
         </p>
       </footer>
     </main>
+  </div>
+
+  <!-- ============================================================
+       Заглушка «материал закрыт».
+       Показывается, когда у <html> стоит класс mode-closed
+       (вверху файла, строка 2). Тогда раздел .layout скрывается,
+       а эта карточка становится видимой.
+       ============================================================ -->
+  <div class="closed" id="closed">
+    <div class="closed__card">
+      <img class="closed__logo" src="pictures/LogoProspect.png" alt="Логотип автошколы «Проспект»" />
+      <p class="eyebrow">Автошкола «Проспект»</p>
+      <h1 class="closed__title">Материал доступен участникам мастер-класса</h1>
+      <p class="closed__text">
+        Теория к мастер-классу «Замесы на перекрёстке» открыта для учеников, которые прошли занятие,
+        — доступ выдаётся на мастер-классе. Если вы были на занятии и хотите вернуться к материалу,
+        напишите нам.
+      </p>
+      <div class="closed__links">
+        <a class="btn btn--primary" href="https://t.me/victoria_deripasskaya" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="https://vk.ru/zato_nauchim" target="_blank" rel="noopener">Мы во ВКонтакте</a>
+      </div>
+      <p class="closed__hint">Автошкола «Проспект» · мастер-класс «Замесы на перекрёстке»</p>
+    </div>
   </div>
 
   <script src="app.js?v=3"></script>
